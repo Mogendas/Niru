@@ -249,6 +249,7 @@ class HardBoardController: UIViewController {
         }
     }
     
+    @objc
     func checkButtonStatus(){
         // Checking to see that all buttons are released before checking button combination
         if yellowButton.isHighlighted == false && redButton.isHighlighted == false && blueButton.isHighlighted == false {
@@ -364,6 +365,7 @@ class HardBoardController: UIViewController {
             infoLabel.text = "Your turn!"
         }
     }
+    @objc
     func showSequence() {
 //                print("Change")
         if infoImage.image != #imageLiteral(resourceName: "ButtonOff") {
@@ -434,7 +436,7 @@ class HardBoardController: UIViewController {
             //            print("Wrong")
             self.game.getBoard().resetMoves()
             self.game.getPlayer().resetPlayerMoves()
-            let message = UIAlertController(title: "Wrong move!", message: "Retry?", preferredStyle: UIAlertControllerStyle.alert)
+            let message = UIAlertController(title: "Wrong move!", message: "Retry?", preferredStyle: UIAlertController.Style.alert)
             message.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction!) in
                 self.storeHighscore()
                 self.game.getBoard().resetMoves()

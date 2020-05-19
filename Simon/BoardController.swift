@@ -119,6 +119,7 @@ class BoardController: UIViewController {
             infoLabel.text = "Your turn!"
         }
     }
+    @objc
     func showSequence() {
 //        print("Change")
         if redButton.isHighlighted == true || yellowButton.isHighlighted == true || blueButton.isHighlighted == true || greenButton.isHighlighted == true {
@@ -185,7 +186,7 @@ class BoardController: UIViewController {
 //            print("Wrong")
             self.game.getBoard().resetMoves()
             self.game.getPlayer().resetPlayerMoves()
-            let message = UIAlertController(title: "Wrong move!", message: "Retry?", preferredStyle: UIAlertControllerStyle.alert)
+            let message = UIAlertController(title: "Wrong move!", message: "Retry?", preferredStyle: UIAlertController.Style.alert)
             message.addAction(UIAlertAction(title: "No", style: .default, handler: { (action: UIAlertAction!) in
                 self.storeHighscore()
                 self.game.getBoard().resetMoves()
